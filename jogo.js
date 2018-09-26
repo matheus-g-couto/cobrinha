@@ -4,7 +4,7 @@ window.addEventListener("resize",definirTamanho);
 
 function definirTamanho(){
   WIDTH = window.innerWidth;
-  HEIGHT = window.innerHeight - 75;
+  HEIGHT = window.innerHeight;
 
   canvas.width = WIDTH;
   canvas.height = HEIGHT;
