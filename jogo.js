@@ -1,4 +1,4 @@
-var canvas, ctx, WIDTH, HEIGHT, FPS, tamanhoTile, jogando, corCanvas = "black";
+﻿var canvas, ctx, WIDTH, HEIGHT, FPS, tamanhoTile, jogando, corCanvas = "black",div;
 var snake;
 //objeto com os valores das setas, obtido manualmente no console do Chrome com função nativa do JS keyCode
 var setas = {
@@ -47,7 +47,11 @@ function init(){
   document.body.appendChild(canvas);
   ctx = canvas.getContext("2d");
   canvas.style.background = corCanvas;
-
+  div = document.getElementById("pontuacao");
+  if(corCanvas=="white" || corCanvas=="yellow")
+	div.style.color = "black";
+  else
+	div.style.color = "white";
   FPS = 15;
 
   newGame();
@@ -63,7 +67,7 @@ function Snake(){
     //posição inicial da cobra
     this.body = [[10, 10],[10, 11],[10, 12]];
     //cor da cobra
-    this.color = "white";
+    this.color = "rgba(245,98,98, 1)";
     //direção inicial da cobra
     this.direction = [0, -1];
 
