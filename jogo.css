@@ -8,5 +8,8 @@ canvas{
   right: 0px;
 }
 #pontuacao{
-  position: relative;  
+  position: relative; top: 0px;
+  color: white;
+  z-index: 50;
+  text-align: right;
 }
