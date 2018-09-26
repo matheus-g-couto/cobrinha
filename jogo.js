@@ -1,5 +1,5 @@
 ﻿var canvas, ctx, WIDTH, HEIGHT, FPS, tamanhoTile, jogando, corCanvas = "black",div;
-var snake;
+var snake, playlabel;
 //objeto com os valores das setas, obtido manualmente no console do Chrome com função nativa do JS keyCode
 var setas = {
   esquerda: 37,
@@ -40,6 +40,9 @@ function definirTamanho(){
 
   tamanhoTile = Math.max(Math.floor(WIDTH / 60),Math.floor(HEIGHT / 60))
 }
+function dispositivoMovel(){
+  return /Android|Ipod|Ipad|Iphone|Windoes Phone/i.test(navigator.userAgent)
+}
 //função principal que roda o jogo, criando o canvas e inicializando tudo
 function init(){
   canvas= document.createElement("canvas");
@@ -60,8 +63,31 @@ function init(){
 function newGame(){
   //sempre que o jogo começar chama a função Snake, e poem que this =  snake
   snake = new Snake();
+  playlabel = new Playlabel();
  //sempre que o jogo começar define que o usuario não está jogando
   jogando = false;
+}
+function Playlabel(){
+  this.text;
+  this.color = "rgb(84, 84, 84)";
+
+  this.messages = {
+    portrait:"Rotacione o dispositivo para poder jogar",
+    landscape:"Arraste a tela para jogar",
+    pc:"Pressione as setas para jogar"
+  };
+  if(dispositivoMovel()){
+
+
+  }
+  else{
+    this.text = this.messages["pc"];
+  }
+  this.draw = function(){
+    ctx.fillStyle = this.color;
+    ctx.font = tamanhoTile*1.5 + "px Arial";
+    ctx.fillText(this.text, WIDTH / 2 - ctx.measureText(this.text).width / 2, HEIGHT / 2 )
+  }
 }
 function Snake(){
     //posição inicial da cobra
@@ -121,6 +147,9 @@ function draw(){
   ctx.clearRect(0, 0, WIDTH, HEIGHT);
 
   snake.draw();
+
+  if(!jogando)
+    playlabel.draw();
 }
 //inciializa o jogo
 init();
