@@ -1,0 +1,16 @@
+$("#abrir-modal").click(function(){
+  $(".modal-mensagem").toggleClass("modal-visivel");
+  $(".central").toggleClass("desfoque");
+  $(".minhoca").toggleClass("desfoque");
+  $(".componentes").toggleClass("desfoque");
+  $(".fontes").toggleClass("desfoque");
+  $(".modal-conteudo").toggleClass("trans-conteudo");
+})
+$(".closer").click(function(){
+  $(".modal-mensagem").toggleClass("modal-visivel");
+  $(".central").toggleClass("desfoque");
+  $(".minhoca").toggleClass("desfoque");
+  $(".componentes").toggleClass("desfoque");
+  $(".fontes").toggleClass("desfoque");
+  $(".modal-conteudo").toggleClass("trans-conteudo");
+})
