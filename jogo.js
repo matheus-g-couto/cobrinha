@@ -1,4 +1,4 @@
-var canvas, ctx, WIDTH, HEIGHT, FPS, tamanhoTile, jogando. corCanvas = "black";
+var canvas, ctx, WIDTH, HEIGHT, FPS, tamanhoTile, jogando, corCanvas = "black";
 var snake;
 window.addEventListener("resize",definirTamanho);
 
