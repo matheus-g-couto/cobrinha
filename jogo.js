@@ -63,7 +63,7 @@ function Snake(){
     //posição inicial da cobra
     this.body = [[10, 10],[10, 11],[10, 12]];
     //cor da cobra
-    this.color = "purple";
+    this.color = "white";
     //direção inicial da cobra
     this.direction = [0, -1];
 
