@@ -1,11 +1,11 @@
-var canvas, ctx, WIDTH, HEIGHT, FPS, tamanhoTile,jogando;
+var canvas, ctx, WIDTH, HEIGHT, FPS, tamanhoTile, jogando. corCanvas = "black";
 var snake;
 window.addEventListener("resize",definirTamanho);
 
 function definirTamanho(){
   WIDTH = window.innerWidth;
   HEIGHT = window.innerHeight;
-
+  
   canvas.width = WIDTH;
   canvas.height = HEIGHT;
 
@@ -17,7 +17,8 @@ function init(){
   definirTamanho();
   document.body.appendChild(canvas);
   ctx = canvas.getContext("2d");
-
+  canvas.style.background = corCanvas;
+  
   FPS = 15;
 
   newGame();
