@@ -77,11 +77,11 @@ button{
   float: right;
 }
 
-#modal-cabeca{
+.modal-cabeca{
   border-bottom: 1px solid grey;
 }
 
-#modal-corpo{
+.modal-corpo{
   border-bottom: 1px solid grey;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -94,7 +94,7 @@ button{
   width: 409px;
 }
 
-#input-submit{
+.input-submit{
   float: right;
   background-color: green;
   color: white;
@@ -105,12 +105,12 @@ button{
   font-family: 'Ubuntu';
 }
 
-#footer{
+.footer{
   padding-top: 20px;
   padding-bottom: 25px;
 }
 
-#cancelar{
+#cancelarA, #cancelarB{
   background-color: red;
   color: white;
   border: 0px;
@@ -137,6 +137,7 @@ button{
   top: 5px;
   right: 5px;
   animation: flutuante .8s ease-in-out 0s infinite alternate;
+  cursor: pointer;
 }
 
 .fontes{
@@ -145,6 +146,7 @@ button{
   top: 5px;
   right: 100px;
   animation: flutuante .8s ease-in-out 0s infinite alternate;
+  cursor: pointer;
 }
 
 @keyframes flutuante {
@@ -158,4 +160,9 @@ button{
 
 .trans-conteudo{
   visibility: visible;
+}
+
+.footer span{
+  color: blue;
+  cursor: pointer;
 }
