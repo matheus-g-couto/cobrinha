@@ -217,3 +217,11 @@ h2{
   height: 360px;
   overflow: auto;
 }
+
+#cancelarA, #cancelarB{
+  background-color: red;
+  color: white;
+  border: 0px;
+  border-radius: 10%;
+  font-family: 'Ubuntu';
+}
