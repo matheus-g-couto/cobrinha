@@ -72,7 +72,7 @@ button{
   z-index: 10;
 }
 
-.closer , .closer2{
+.closer , .closer2,.closer3 ,.closer4{
   float: right;
 }
 
