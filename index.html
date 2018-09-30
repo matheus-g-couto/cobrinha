@@ -23,12 +23,12 @@
           <h3>Login</h3>
         </div>
         <div class="modal-corpo">
-          Usuário <input type="text" name="login" class="input-login">
-          Senha <input type="password" name="senha" class="input-login">
+          Usuário <input type="text" name="login" class="input-login" id="UsuarioLog">
+          Senha <input type="password" name="senha" class="input-login" id="SenhaLog">
         </div>
         <div class="footer">
           <button type="button" id="inscrever">Inscreva-se</button>
-          <input type="submit" value="Enviar" class="input-submit">
+          <button type="button" id="enviar1" class="input-submit">Enviar</button>
           <button type="button" class="closer" id="cancelarA">Cancelar</button>
         </div>
       </div>
@@ -41,14 +41,14 @@
           <h3>Inscreva-se aqui!</h3>
         </div>
         <div class="modal-corpo">
-          Usuário <input type="text" name="usuário" class="input-inscrever">
-          Login <input type="text" name="login" class="input-inscrever">
-          Senha <input type="password" name="senha" class="input-inscrever">
-          Confirmar Senha <input type="password" name="senha" class="input-inscrever">
+          Usuário <input type="text" name="usuário" class="input-inscrever" id="UsuarioIns">
+          Senha <input type="password" name="senha" class="input-inscrever" id="SenhaIns">
+          Confirmar Senha <input type="password" name="senha" class="input-inscrever" id="CSenhaIns">
+          <p id="senhaIncorreta"></p>
         </div>
         <div class="footer">
-          <input type="submit" value="Enviar" class="input-submit2">
-          <button type="button" class="closer2" id="cancelarB">Cancelar</button>
+          <button type="button" id="enviar2" class="input-submit">Enviar</button>
+          <button type="button" class="closer2" id="cancelarB">Voltar</button>
         </div>
       </div>
     </div>
@@ -56,4 +56,5 @@
   </body>
   <script src="jquery-3.3.1.min.js"></script>
   <script src="js-index.js"></script>
+  <script src="storage.js"></script>
 </html>
