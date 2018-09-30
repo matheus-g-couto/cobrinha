@@ -170,3 +170,50 @@ button{
   border-radius: 10%;
   border: 0px;
 }
+
+#componentes{
+  height: 60%;
+}
+
+#componentes-corpo{
+  height: 360px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.membros{
+  border: black solid 1px;
+  padding: 30px;
+  border-radius: 15px;
+  height: 300px;
+  width: 500px;
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.membros p{
+  margin-top: 135px;
+  font-size:
+}
+
+h2{
+  margin-top: 0;
+  font-size: 1em;
+}
+
+.img-componentes{
+  float: left;
+  height: 270px;
+  width: 270px;
+}
+
+.fontes-conteudo{
+    overflow:hidden;
+}
+
+#componentes-fontes{
+  height: 360px;
+  overflow: auto;
+}
