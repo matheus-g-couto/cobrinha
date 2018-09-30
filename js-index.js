@@ -18,11 +18,3 @@ function inscrever(){
   $("#inscrever-mensagem").toggleClass("modal-visivel");
   $("#inscrever-conteudo").toggleClass("trans-conteudo");
 }
-
-$componentes(){
-  
-}
-
-function afogar(){
-
-}
