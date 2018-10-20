@@ -162,7 +162,7 @@ function Apple1(){
 
 function Snake(){
     //posição inicial da cobra
-    this.body = [[10, 10],[10, 11],[10, 12]];
+    this.body = [[10, 10]];
     //cor da cobra
     this.color = "rgba(245,98,98, 1)";
 
