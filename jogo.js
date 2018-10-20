@@ -185,7 +185,7 @@ function Snake(){
             this.direction = [0, -1];
       }
 
-      if(floor(this.body[0][0]) == floor(apple1.body[0]) && floor(this.body[0][1]) == floor(apple1.body[1])){
+      if(Math.floor(this.body[0][0]) == Math.floor(apple1.body[0]) && Math.floor(this.body[0][1]) == Math.floor(apple1.body[1])){
         this.body.splice(this.body.length , 0, nextPos);
 
         pts++;
