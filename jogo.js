@@ -94,7 +94,7 @@ function touchMove(e){
 
 function touchStart(e){
   for(var i = 0 ; i<e.touches.length; i++)
-    e.preventDefaut();
+        e.preventDefault();
 
     var touch = e.touches[0];
 
