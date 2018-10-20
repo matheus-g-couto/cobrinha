@@ -1,7 +1,7 @@
 //variaveis globais
 var canvas, ctx, WIDTH, HEIGHT, FPS, tamanhoTile, jogando, corCanvas = "black",div;
 var snake, playlabel ,apple1;
-var pts;
+var globalTouch = [] , offset = [] , pts;
 
 div = document.getElementById("pontuacao");
 
@@ -76,6 +76,31 @@ window.addEventListener("keydown", keyDown);
 //define o tamanho da tela de acordo com o canvas
 window.addEventListener("resize",definirTamanho);
 
+window.addEventListener("touchstart",touchStart);
+window.addEventListener("touchmove",touchMove);
+window.addEventListener("touchend",touchEnd);
+
+function touchEnd(e){
+    if(Math.abs(offset[0]) > Math.abs(offset[1]))
+      snake.direction = [offset[0]/Math.abs(offset[0]),0];
+    else
+      snake.direction = [0,offset[1]/Math.abs(offset[1])];
+}
+
+function touchMove(e){
+  var touch = e.touches[0];
+  offset = [touch.pageX - globalTouch[0],touch.pageY - globalTouch[1]];
+}
+
+function touchStart(e){
+  for(var i = 0 ; i<e.touches.length; i++)
+    e.preventDefaut();
+
+    var touch = e.touches[0];
+
+    globalTouch = [touch.pageX, touch.pageY];
+}
+
 //define pra que direção a cobrinha vai de acordo com a tecla apertada
 function keyDown(e){
   if(!jogando && (e.keyCode == setas.cima || e.keyCode == setas.baixo || e.keyCode == setas.esquerda || e.keyCode == setas.direita))
@@ -148,7 +173,7 @@ function Playlabel(){
 
 function Apple1(){
   //posição inicial da maçã
-  this.body = [Math.floor(Math.random() * (WIDTH / tamanhoTile) + 1), Math.floor(Math.random() * (HEIGHT / tamanhoTile) + 1)];
+  this.body = [(Math.random() * (WIDTH / tamanhoTile) + 1), (Math.random() * (HEIGHT / tamanhoTile) + 1)];
   //cor da maçã
   this.color = "red";
 
@@ -193,13 +218,13 @@ function Snake(){
         div.innerHTML="Pontuação : " + pts;
 
         var x , y;
-        x = Math.floor(Math.random() * (WIDTH / tamanhoTile));
-        y = Math.floor(Math.random() * (HEIGHT / tamanhoTile));
+        x = (Math.random() * (WIDTH / tamanhoTile));
+        y = (Math.random() * (HEIGHT / tamanhoTile));
 
         for(var i=1 ; i < this.body.length ; i++)
             while(x==this.body[i][0] && y==this.body[i][1]){
-              x = Math.floor(Math.random() * (WIDTH / tamanhoTile));
-              y = Math.floor(Math.random() * (HEIGHT / tamanhoTile));
+              x = (Math.random() * (WIDTH / tamanhoTile));
+              y = (Math.random() * (HEIGHT / tamanhoTile));
             }
 
         apple1.body[0] = x;
