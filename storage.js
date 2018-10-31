@@ -15,10 +15,13 @@ function salvaLogin(){
   z = localStorage.getItem('usuario',$('#UsuarioIns').val());
 
   $('#senhaIncorreta').html('');
-
-  if(x == y){
-    $('#senhaIncorreta').html("<p style = 'color:green'>Conta criada, clique em voltar.</p>");
-  }else{ $('#senhaIncorreta').html("<p style = 'color:red'>As senhas não são idênticas.</p>");}
+  if(x.length == 0 || y.length == 0 || z.length == 0){
+    $('#senhaIncorreta').html("<p style = 'color:red'>Preencha todos os campos!</p>")
+  } else{
+    if(x == y){
+      $('#senhaIncorreta').html("<p style = 'color:green'>Conta criada, clique em voltar.</p>");
+    }else{ $('#senhaIncorreta').html("<p style = 'color:red'>As senhas não são idênticas.</p>");}
+  }
 }
 
 function entraJogo(){
