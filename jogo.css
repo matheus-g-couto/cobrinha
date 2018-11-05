@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+canvas{
+  margin: auto;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin: 0;
+}
+#pontuacao{
+  position: relative; top: 0px;
+  color: white;
+  z-index: 50;
+  float:left;
+  text-align: left;
+  font-family: 'Ubuntu';
+  font-size: 100%;
+}
+#teste{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 25%;
+  height: 500px;
+}
