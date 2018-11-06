@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+canvas{
+  margin: auto;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin: 0;
+}
+#pontuacao{
+  position: relative; top: 0px;
+  color: white;
+  z-index: 50;
+  float:left;
+  text-align: left;
+  font-family: 'Ubuntu';
+  font-size: 100%;
+}
+#loja{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 23.5%;
+  border:15px solid rgba(245,98,98, 1);
+  background-color: rgba(255,140,140, 0.7);
+}
+html{
+  font-family: 'Ubuntu';
+  text-align: center;
+}
+h1{
+  color: white;
+  text-shadow: 2px 2px #000;
+}
+h2{
+  color: darkgreen;;
+}
+#cobra{
+  margin-bottom: 5%;
+}
