@@ -1,13 +1,16 @@
 //variaveis globais
 var canvas, ctx, WIDTH, HEIGHT, FPS, tamanhoTile, jogando, corCanvas = "black",div;
 var snake, playlabel ,apple1;
-var pts;
+var pts, recorde;
 var loja,botoesminhoca , botoesfundo;
 
 loja = document.getElementById("loja");
 botoesminhoca= document.querySelectorAll(".cor-minhoca");
 botoesfundo= document.querySelectorAll(".cor-fundo");
 div = document.getElementById("pontuacao");
+
+recorde = localStorage.getItem('recorde');
+if(recorde==undefined) recorde=0;
 
 //objeto com os valores das setas, obtido manualmente no console do Chrome com função nativa do JS keyCode
 var setas = {
@@ -123,7 +126,7 @@ function newGame(){
 
   pts = 0;
 
-  div.innerHTML="Pontuação : 0";
+  div.innerHTML="Pontuação : 0  Recorde : 0";
 
  //sempre que o jogo começar define que o usuario não está jogando
   jogando = false;
@@ -195,9 +198,13 @@ function Snake(){
       if(Math.floor(this.body[0][0]) == Math.floor(apple1.body[0]) && Math.floor(this.body[0][1]) == Math.floor(apple1.body[1])){
         this.body.splice(this.body.length , 0, nextPos);
 
-        pts++;
-        div.innerHTML="Pontuação : " + pts;
-
+        //armazena o recorde do jogador toda vez que a pontuação atual for maior que o recorde anterior
+        if(pts>recorde){
+          recorde = pts;
+          localStorage.setItem('recorde', recorde);
+        }
+        div.innerHTML="Pontuação : " + pts + " Recorde : " + recorde;
+	      
         var x , y;
         x = Math.floor(Math.random() * (WIDTH / tamanhoTile));
         y = Math.floor(Math.random() * (HEIGHT / tamanhoTile));
