@@ -1,22 +1,24 @@
-let x = localStorage.getItem('senha', $('#SenhaIns').val());
-let y = localStorage.getItem('confirmacaoSenha', $('#CSenhaIns').val());
-let z = localStorage.getItem('usuario', $('#UsuarioIns'));
-
 $('#enviar1').click(entraJogo);
 $('#enviar2').click(salvaLogin);
+let x, y, z;
 
 function salvaLogin(){
   localStorage.setItem('usuario', $('#UsuarioIns').val());
   localStorage.setItem('senha', $('#SenhaIns').val());
   localStorage.setItem('confirmacaoSenha', $('#CSenhaIns').val());
 
-  x =  localStorage.getItem('senha', $('#SenhaIns').val());
-  y = localStorage.getItem('confirmacaoSenha', $('#CSenhaIns').val());
-  z = localStorage.getItem('usuario',$('#UsuarioIns').val());
+  x =  localStorage.getItem('senha');
+  y = localStorage.getItem('confirmacaoSenha');
+  z = localStorage.getItem('usuario');
 
   $('#senhaIncorreta').html('');
   if(x.length == 0 || y.length == 0 || z.length == 0){
-    $('#senhaIncorreta').html("<p style = 'color:red'>Preencha todos os campos!</p>")
+    $('#senhaIncorreta').html("<p style = 'color:red'>Preencha todos os campos!</p>");
+    x = y = z = undefined;
+  }
+  if(x.lenght < 6 || y.lenght < 6){
+    $('#senhaIncorreta').html("<p style = 'color:red'>Seu usuário e sua senha devem ter no mínimo 6 caracteres!</p>");
+    x = y = z = undefined;
   } else{
     if(x == y){
       $('#senhaIncorreta').html("<p style = 'color:green'>Conta criada, clique em voltar.</p>");
