@@ -258,6 +258,10 @@ function Snake(){
     }
 }
 
+$("#hackvelo").click(function(){
+  FPS+=20;
+})
+
 $("#escolhecobra").change(function(){
   snake.color = escolhecobra.value;
 })
