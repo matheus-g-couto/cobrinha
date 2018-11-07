@@ -2,9 +2,11 @@
 var canvas, ctx, WIDTH, HEIGHT, FPS, tamanhoTile, jogando, corCanvas = "black",div;
 var snake, playlabel ,apple1;
 var pts, recorde;
-var loja,botoesminhoca , botoesfundo;
+var loja,botoesminhoca , botoesfundo , escolhacobra , escolhefundo;
 
 loja = document.getElementById("loja");
+escolhecobra = document.getElementById("escolhecobra");
+escolhefundo = document.getElementById("escolhefundo");
 botoesminhoca= document.querySelectorAll(".cor-minhoca");
 botoesfundo= document.querySelectorAll(".cor-fundo");
 div = document.getElementById("pontuacao");
@@ -69,7 +71,7 @@ function definirTamanho(){
   WIDTH = window.innerWidth * 0.75;
   HEIGHT = window.innerHeight;
 
-  loja.style.width=WIDTH/3 - 30 + "px";
+  loja.style.width=WIDTH/3 - 29 + "px";
 
   loja.style.height=HEIGHT - 30 + "px";
 
@@ -204,7 +206,7 @@ function Snake(){
           localStorage.setItem('recorde', recorde);
         }
         div.innerHTML="Pontuação : " + pts + " Recorde : " + recorde;
-	      
+
         var x , y;
         x = Math.floor(Math.random() * (WIDTH / tamanhoTile));
         y = Math.floor(Math.random() * (HEIGHT / tamanhoTile));
@@ -255,6 +257,15 @@ function Snake(){
       }
     }
 }
+
+$("#escolhecobra").change(function(){
+  snake.color = escolhecobra.value;
+})
+
+$("#escolhefundo").change(function(){
+  canvas.style.background = escolhefundo.value;
+})
+
 for(let i = 0 ; i < botoesminhoca.length ; i++){
   botoesminhoca[i].addEventListener('click',function(){
     snake.color = botoesminhoca[i].name;
