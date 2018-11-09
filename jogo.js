@@ -199,7 +199,7 @@ function Snake(){
       //quando pega a maçã,a minhoca cresce e a maçã vai para outro lugar
       if(Math.floor(this.body[0][0]) == Math.floor(apple1.body[0]) && Math.floor(this.body[0][1]) == Math.floor(apple1.body[1])){
         this.body.splice(this.body.length , 0, nextPos);
-
+	pts++;
         //armazena o recorde do jogador toda vez que a pontuação atual for maior que o recorde anterior
         if(pts>recorde){
           recorde = pts;
