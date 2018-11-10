@@ -1,6 +1,7 @@
 //variaveis globais
 var canvas, ctx, WIDTH, HEIGHT, FPS, tamanhoTile, jogando, corCanvas = "black",div;
 var snake, playlabel ,apple1;
+var globalTouch = [], offset = [];
 var pts, recorde;
 var loja,botoesminhoca , botoesfundo , escolhacobra , escolhefundo;
 
@@ -86,6 +87,34 @@ window.addEventListener("keydown", keyDown);
 
 //define o tamanho da tela de acordo com o canvas
 window.addEventListener("resize",definirTamanho);
+
+//mover cobrinha no celular celular
+window.addEventListener("touchstart", touchStart);
+window.addEventListener("touchmove", touchMove);
+window.addEventListener("touchend", touchEnd);
+
+function touchMove(e){
+  var touch = e.touches[0];
+  offset = [touch.pageX - globalTouch[0],touch.pageY - globalTouch[1]];
+}
+
+function touchEnd(e){
+  if (Math.abs(offset[0]) > Math.abs(offset[1])) {
+    if(snake.direction[0] != 1 && snake.direction[0] != -1)
+      snake.direction = [offset[0] / Math.abs(offset[0]),0];
+  }
+  else {
+    if(snake.direction[1] != 1 && snake.direction[1] != -1)
+      snake.direction = [0,offset[1] / Math.abs(offset[1])];
+  }
+}
+
+function touchStart(e){
+  jogando = true;
+  e.preventDefault();
+  var touch = e.touches[0];
+  globalTouch = [touch.pageX,touch.pageY];
+}
 
 //define pra que direção a cobrinha vai de acordo com a tecla apertada
 function keyDown(e){
