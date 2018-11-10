@@ -173,8 +173,10 @@ function Playlabel(){
     pc:"Pressione as setas para jogar"
   };
   if(dispositivoMovel()){
-
-
+    if(HEIGHT>WIDTH)
+      this.text = this.messages["portrait"];
+    else
+      this.text = this.messages["landscape"];
   }
   else{
     this.text = this.messages["pc"];
