@@ -147,7 +147,7 @@ function newGame(){
   apple1 = new Apple1();
 
   pts = 0;
-  div.innerHTML="Pontuação : 0 Recorde: 0";
+  div.innerHTML="Pontuação : 0";
 
  //sempre que o jogo começar define que o usuario não está jogando
   jogando = false;
