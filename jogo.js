@@ -270,7 +270,7 @@ function Snake(){
             newGame();
         else if(snake.direction[0] == -1 && nextPos[0] <= -1)
             newGame();
-	      
+
         //se encostar em sí mesma, o jogo é reiniciado
         for(var i=1 ; i < this.body.length ; i++)
             if(this.body[0][0]==this.body[i][0] && this.body[0][1]==this.body[i][1])

@@ -78,6 +78,34 @@ function definirTamanho(){
   div.height = HEIGHT/60;
 }
 
+//mover cobrinha no celular celular
+window.addEventListener("touchstart", touchStart);
+window.addEventListener("touchmove", touchMove);
+window.addEventListener("touchend", touchEnd);
+
+function touchMove(e){
+  var touch = e.touches[0];
+  offset = [touch.pageX - globalTouch[0],touch.pageY - globalTouch[1]];
+}
+
+function touchEnd(e){
+  if (Math.abs(offset[0]) > Math.abs(offset[1])) {
+    if(snake.direction[0] != 1 && snake.direction[0] != -1)
+      snake.direction = [offset[0] / Math.abs(offset[0]),0];
+  }
+  else {
+    if(snake.direction[1] != 1 && snake.direction[1] != -1)
+      snake.direction = [0,offset[1] / Math.abs(offset[1])];
+  }
+}
+
+function touchStart(e){
+  jogando = true;
+  e.preventDefault();
+  var touch = e.touches[0];
+  globalTouch = [touch.pageX,touch.pageY];
+}
+
 //sempre que tiver uma tecla pressionada chama a função keyDown
 window.addEventListener("keydown", keyDown);
 
@@ -140,8 +168,7 @@ function Playlabel(){
     pc:"Pressione as setas para jogar"
   };
   if(dispositivoMovel()){
-
-
+      this.text = this.messages["landscape"];
   }
   else{
     this.text = this.messages["pc"];
@@ -220,13 +247,17 @@ function Snake(){
       //se passar da tela a minhoca aparece do outro lado.
       if (jogando){
         if(snake.direction[1] == -1 && nextPos[1] <= -1)
-            newGame();
+            //newGame();
+            nextPos[1] = (HEIGHT / tamanhoTile);
         else if(snake.direction[0] == 1 && nextPos[0] >= 1 + (WIDTH / tamanhoTile))
-            newGame();
+            //newGame();
+            nextPos[0] = 0;
         else if(snake.direction[1] == 1 && nextPos[1] >= 1 + (HEIGHT / tamanhoTile))
-            newGame();
+            //newGame();
+            nextPos[1] = 0;
         else if(snake.direction[0] == -1 && nextPos[0] <= -1)
-            newGame();
+            //newGame();
+            nextPos[0] = (WIDTH / tamanhoTile);
 
         //se encostar em sí mesma, o jogo é reiniciado
         for(var i=1 ; i < this.body.length ; i++)
