@@ -7,9 +7,6 @@ var botao1;
 botao1= document.getElementById("azulbotao");
 div = document.getElementById("pontuacao");
 
-recorde = sessionStorage.getItem('recorde');
-if(recorde==undefined) recorde=0;
-
 //objeto com os valores das setas, obtido manualmente no console do Chrome com função nativa do JS keyCode
 var setas = {
   esquerda: 37,
@@ -222,11 +219,7 @@ function Snake(){
         this.body.splice(this.body.length , 0, nextPos);
         pts++;
         //armazena o recorde do jogador toda vez que a pontuação atual for maior que o recorde anterior
-        if(pts>recorde){
-          recorde = pts;
-          sessionStorage.setItem('recorde', recorde);
-        }
-        div.innerHTML="Pontuação : " + pts + " Recorde : " + recorde;
+        div.innerHTML="Pontuação : " + pts;
 
         var x , y;
         x = Math.floor(Math.random() * (WIDTH / tamanhoTile));
