@@ -16,7 +16,7 @@ function salvaLogin(){
     $('#senhaIncorreta').html("<p style = 'color:red'>Preencha todos os campos!</p>");
     x = y = z = undefined;
   }
-  if(x.lenght < 6 || y.lenght < 6){
+  if(x.length < 6 || y.length < 6){
     $('#senhaIncorreta').html("<p style = 'color:red'>Seu usuário e sua senha devem ter no mínimo 6 caracteres!</p>");
     x = y = z = undefined;
   } else{

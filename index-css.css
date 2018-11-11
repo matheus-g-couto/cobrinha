@@ -62,7 +62,7 @@ button{
   transition: 1000ms;
   visibility:visible;
   margin: auto;
-  height: 50%;
+  height: 60%;
   width: 50%;
   border: 1px solid grey;
   border-radius: 10px;
@@ -105,8 +105,8 @@ button{
 }
 
 .footer{
-  padding-top: 20px;
-  padding-bottom: 25px;
+  padding-top: 1.5em;
+  padding-bottom: 1.6em;
 }
 
 #cancelarA, #cancelarB{

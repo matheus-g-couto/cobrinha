@@ -3,7 +3,8 @@ var canvas, ctx, WIDTH, HEIGHT, FPS, tamanhoTile, jogando, corCanvas = "black",d
 var snake, playlabel ,apple1;
 var globalTouch = [], offset = [];
 var pts, recorde;
-var loja,botoesminhoca , botoesfundo , escolhacobra , escolhefundo;
+var loja, botoesminhoca , botoesfundo , escolhacobra , escolhefundo;
+var saldo, caixa;
 
 loja = document.getElementById("loja");
 escolhecobra = document.getElementById("escolhecobra");
@@ -11,9 +12,13 @@ escolhefundo = document.getElementById("escolhefundo");
 botoesminhoca= document.querySelectorAll(".cor-minhoca");
 botoesfundo= document.querySelectorAll(".cor-fundo");
 div = document.getElementById("pontuacao");
+caixa = document.getElementById("saldo");
 
 recorde = localStorage.getItem('recorde');
 if(recorde==undefined) recorde=0;
+
+saldo = localStorage.getItem('saldo-atual');
+if(saldo==undefined) saldo=0;
 
 //objeto com os valores das setas, obtido manualmente no console do Chrome com função nativa do JS keyCode
 var setas = {
@@ -79,7 +84,7 @@ function definirTamanho(){
   canvas.width = WIDTH ;
   canvas.height = HEIGHT;
 
-  tamanhoTile = Math.max(Math.floor(WIDTH / 60),Math.floor(HEIGHT / 60))
+  tamanhoTile = Math.max(Math.floor(WIDTH / 60),Math.floor(HEIGHT / 60));
 }
 
 //sempre que tiver uma tecla pressionada chama a função keyDown
@@ -230,7 +235,10 @@ function Snake(){
       //quando pega a maçã,a minhoca cresce e a maçã vai para outro lugar
       if(Math.floor(this.body[0][0]) == Math.floor(apple1.body[0]) && Math.floor(this.body[0][1]) == Math.floor(apple1.body[1])){
         this.body.splice(this.body.length , 0, nextPos);
-
+        pts++;
+        saldo++;
+        localStorage.setItem('saldo-atual', saldo);
+        caixa.innerHTML = "Saldo: " + saldo;
         //armazena o recorde do jogador toda vez que a pontuação atual for maior que o recorde anterior
         if(pts>recorde){
           recorde = pts;
