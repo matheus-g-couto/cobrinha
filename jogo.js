@@ -263,18 +263,14 @@ function Snake(){
       //se passar da tela a minhoca aparece do outro lado.
       if (jogando){
         if(snake.direction[1] == -1 && nextPos[1] <= -1)
-            //newGame();
-            nextPos[1] = (HEIGHT / tamanhoTile);
+            newGame();
         else if(snake.direction[0] == 1 && nextPos[0] >= 1 + (WIDTH / tamanhoTile))
-            //newGame();
-            nextPos[0] = 0;
+            newGame();
         else if(snake.direction[1] == 1 && nextPos[1] >= 1 + (HEIGHT / tamanhoTile))
-            //newGame();
-            nextPos[1] = 0;
+            newGame();
         else if(snake.direction[0] == -1 && nextPos[0] <= -1)
-            //newGame();
-            nextPos[0] = (WIDTH / tamanhoTile);
-
+            newGame();
+	      
         //se encostar em sí mesma, o jogo é reiniciado
         for(var i=1 ; i < this.body.length ; i++)
             if(this.body[0][0]==this.body[i][0] && this.body[0][1]==this.body[i][1])
