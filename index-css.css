@@ -62,7 +62,7 @@ button{
   transition: 1000ms;
   visibility:visible;
   margin: auto;
-  height: 60%;
+  height: 50%;
   width: 50%;
   border: 1px solid grey;
   border-radius: 10px;
