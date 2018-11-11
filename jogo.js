@@ -5,7 +5,9 @@ var globalTouch = [], offset = [];
 var pts, recorde;
 var loja, botoesminhoca , botoesfundo , escolhacobra , escolhefundo;
 var saldo, caixa;
+var p;
 
+p = document.querySelectorAll(".mix-cores");
 loja = document.getElementById("loja");
 escolhecobra = document.getElementById("escolhecobra");
 escolhefundo = document.getElementById("escolhefundo");
@@ -298,11 +300,27 @@ $("#hackvelo").click(function(){
 })
 
 $("#escolhecobra").change(function(){
-  snake.color = escolhecobra.value;
+  if(p[0].innerHTML == "Escolha uma cor: 200"){
+    if(saldo>=200){
+      snake.color = escolhecobra.value;
+      saldo-=200;
+      localStorage.setItem('saldo-atual', saldo);
+      caixa.innerHTML = "Saldo: " + saldo;
+      p[0].innerHTML = "Escolha uma cor: ";
+    } else if(p[0].innerHTML == "Escolha uma cor: ") snake.color = escolhecobra.value;
+  } else if(p[0].innerHTML == "Escolha uma cor: ") snake.color = escolhecobra.value;
 })
 
 $("#escolhefundo").change(function(){
-  canvas.style.background = escolhefundo.value;
+  if(p[1].innerHTML == "Escolha uma cor: 200"){
+    if(saldo>=200){
+      canvas.style.background = escolhefundo.value;
+      saldo-=200;
+      localStorage.setItem('saldo-atual', saldo);
+      caixa.innerHTML = "Saldo: " + saldo;
+      p[1].innerHTML = "Escolha uma cor: ";
+    } else if(p[1].innerHTML == "Escolha uma cor: ") canvas.style.background = escolhefundo.value;
+  } else if(p[1].innerHTML == "Escolha uma cor: ") canvas.style.background = escolhefundo.value;
 })
 //muda a cor da cobrinha
 for(let i = 0 ; i < botoesminhoca.length ; i++){
@@ -323,9 +341,19 @@ for(let i = 0 ; i < botoesminhoca.length ; i++){
 }
 for(let i = 0 ; i < botoesfundo.length ; i++){
   botoesfundo[i].addEventListener('click',function(){
-    canvas.style.background = botoesfundo[i].name;
+    //se i>=1, a cor desejada é uma cor comprável, se i=0, é a cor padrão
+    if(i>=1){
+      if(saldo >=botoesfundo[i].value){
+        if(botoesfundo[i].innerHTML == botoesfundo[i].id + ": " + botoesfundo[i].value){
+          canvas.style.background = botoesfundo[i].name;
+          saldo-=botoesfundo[i].value;
+          localStorage.setItem('saldo-atual', saldo);
+          caixa.innerHTML = "Saldo: " + saldo;
+          botoesfundo[i].innerHTML = botoesfundo[i].id;
+        } else if(botoesfundo[i].innerHTML == botoesfundo[i].id) canvas.style.background = botoesfundo[i].name;
+      } else if(botoesfundo[i].innerHTML == botoesfundo[i].id) canvas.style.background = botoesfundo[i].name;
+    } else canvas.style.background = botoesfundo[i].name;
   })
 }
-
 //inciializa o jogo
 init();

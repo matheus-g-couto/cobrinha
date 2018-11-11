@@ -47,7 +47,7 @@ h3{
   padding-top: 1em;
   position: relative;
   bottom: 2em;
-  top: 30%;
+  top: 20%;
   display: flex;
   margin: auto 25%;
 }
@@ -56,4 +56,7 @@ h3{
 }
 button{
   margin-top: 0.1em;
+}
+p{
+  display: inline;
 }
