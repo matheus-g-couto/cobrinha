@@ -304,10 +304,21 @@ $("#escolhecobra").change(function(){
 $("#escolhefundo").change(function(){
   canvas.style.background = escolhefundo.value;
 })
-
+//muda a cor da cobrinha
 for(let i = 0 ; i < botoesminhoca.length ; i++){
   botoesminhoca[i].addEventListener('click',function(){
-    snake.color = botoesminhoca[i].name;
+    //se i>=1, a cor desejada é uma cor comprável, se i=0, é a cor padrão
+    if(i>=1){
+      if(saldo >=botoesminhoca[i].value){
+        if(botoesminhoca[i].innerHTML == botoesminhoca[i].id + ": " + botoesminhoca[i].value){
+          snake.color = botoesminhoca[i].name;
+          saldo-=botoesminhoca[i].value;
+          localStorage.setItem('saldo-atual', saldo);
+          caixa.innerHTML = "Saldo: " + saldo;
+          botoesminhoca[i].innerHTML = botoesminhoca[i].id;
+        } else if(botoesminhoca[i].innerHTML == botoesminhoca[i].id) snake.color = botoesminhoca[i].name;
+      } else if(botoesminhoca[i].innerHTML == botoesminhoca[i].id) snake.color = botoesminhoca[i].name;;
+    } else snake.color = botoesminhoca[i].name;
   })
 }
 for(let i = 0 ; i < botoesfundo.length ; i++){
