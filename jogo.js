@@ -8,9 +8,12 @@ var saldo, caixa;
 var p;
 
 cheet('w a g a o', function() {
-  $("#nome-hack").html("Hack XD");
-  $("#hackvelo").click(function(){
+  $("#hack1").html('<button  id="maisvelo">Velocidade++</button><button id="menosvelo">Velocidade--</button>');
+  $("#maisvelo").click(function(){
     FPS+=20;
+  })
+  $("#menosvelo").click(function(){
+    FPS=20;
   })
 });
 
