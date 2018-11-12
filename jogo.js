@@ -7,6 +7,13 @@ var loja, botoesminhoca , botoesfundo , escolhacobra , escolhefundo;
 var saldo, caixa;
 var p;
 
+cheet('w a g a o', function() {
+  $("#nome-hack").html("Hack XD");
+  $("#hackvelo").click(function(){
+    FPS+=20;
+  })
+});
+
 p = document.querySelectorAll(".mix-cores");
 loja = document.getElementById("loja");
 escolhecobra = document.getElementById("escolhecobra");
@@ -294,10 +301,6 @@ function Snake(){
       }
     }
 }
-
-$("#hackvelo").click(function(){
-  FPS+=20;
-})
 
 $("#escolhecobra").change(function(){
   if(p[0].innerHTML == "Escolha uma cor: 200"){
