@@ -2,6 +2,10 @@ $('#enviar1').click(entraJogo);
 $('#enviar2').click(salvaLogin);
 let x, y, z;
 
+x =  localStorage.getItem('senha');
+y = localStorage.getItem('confirmacaoSenha');
+z = localStorage.getItem('usuario');
+
 function salvaLogin(){
   localStorage.setItem('usuario', $('#UsuarioIns').val());
   localStorage.setItem('senha', $('#SenhaIns').val());
