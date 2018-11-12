@@ -80,7 +80,7 @@ function definirTamanho(){
   canvas.width = WIDTH ;
   canvas.height = HEIGHT;
 
-  tamanhoTile = Math.max(Math.floor(WIDTH / 60),Math.floor(HEIGHT / 60))
+  tamanhoTile = Math.max(Math.floor(WIDTH / 60),Math.floor(HEIGHT / 60));
 
   div.width = WIDTH/60;
   div.height = HEIGHT/60;
@@ -176,6 +176,8 @@ function Playlabel(){
     pc:"Pressione as setas para jogar"
   };
   if(dispositivoMovel()){
+    tamanhoTile = Math.max(Math.floor(WIDTH / 40),Math.floor(HEIGHT / 40))
+    FPS = 12;
       this.text = this.messages["landscape"];
   }
   else{
