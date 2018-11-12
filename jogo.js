@@ -216,10 +216,11 @@ function Playlabel(){
     pc:"Pressione as setas para jogar"
   };
   if(dispositivoMovel()){
-	FPS = 10;
-    if(HEIGHT>WIDTH)
-      this.text = this.messages["portrait"];
-    else
+    tamanhoTile = Math.max(Math.floor(WIDTH / 45),Math.floor(HEIGHT / 45))
+    FPS = 12;
+    $('#cobra').html('<p' + 'class="mix-cores">' + 'Escolha uma cor: 200 ' + '</p><input id="escolhecobra" type="color" name="selecao">');
+    $('#fundo').html('<p' + 'class="mix-cores">' + 'Escolha uma cor: 200 ' + '</p><input id="escolhefundo" type="color" name="selecao">');
+    $('#audiox').html('');
       this.text = this.messages["landscape"];
   }
   else{
