@@ -216,13 +216,32 @@ function Playlabel(){
     pc:"Pressione as setas para jogar"
   };
   if(dispositivoMovel()){
-    tamanhoTile = Math.max(Math.floor(WIDTH / 45),Math.floor(HEIGHT / 45))
-    FPS = 12;
-    $('#cobra').html('<p ' + 'class="mix-cores">' + 'Escolha uma cor: 200 ' + '</p><input id="escolhecobra" type="color" name="selecao">');
-    $('#fundo').html('<p ' + 'class="mix-cores">' + 'Escolha uma cor: 200 ' + '</p><input id="escolhefundo" type="color" name="selecao">');
+    tamanhoTile = Math.max(Math.floor(WIDTH / 35),Math.floor(HEIGHT / 35))
+    FPS = 10;
+    $('#cobra').html('<p ' + 'class="mix-cores">' + 'Escolha uma cor: 25 ' + '</p>' + '<input id="escolhecobra" type="color" name="selecao">');
+    $('#fundo').html('<p ' + 'class="mix-cores">' + 'Escolha uma cor: 25 ' + '</p>' + '<input id="escolhefundo" type="color" name="selecao">');
     $('#audiox').html('');
     $('h1').css('font-size','100%');
     $('h2').css('font-size','90%');
+
+    $("#escolhecobra").change(function(){
+        if(saldo>=30){
+          snake.color = escolhecobra.value;
+          saldo-=30;
+          localStorage.setItem('saldo-atual', saldo);
+          caixa.innerHTML = "Saldo: " + saldo;
+        }
+    })
+
+    $("#escolhefundo").change(function(){
+        if(saldo>=30){
+          canvas.style.background = escolhefundo.value;
+          saldo-=30;
+          localStorage.setItem('saldo-atual', saldo);
+          caixa.innerHTML = "Saldo: " + saldo;
+        }
+    })
+
       this.text = this.messages["landscape"];
   }
   else{
@@ -338,36 +357,33 @@ function Snake(){
       }
     }
 }
-
 $("#escolhecobra").change(function(){
-  if(p[0].innerHTML == "Escolha uma cor: 200 "){
-    if(saldo>=200){
+  if(p[0].innerHTML == "Escolha uma cor: 50 "){
+    if(saldo>=50){
       snake.color = escolhecobra.value;
-      saldo-=200;
+      saldo-=50;
       localStorage.setItem('saldo-atual', saldo);
       caixa.innerHTML = "Saldo: " + saldo;
-      p[0].innerHTML = "Escolha uma cor: ";
-    } else if(p[0].innerHTML == "Escolha uma cor: ") snake.color = escolhecobra.value;
-  } else if(p[0].innerHTML == "Escolha uma cor: ") snake.color = escolhecobra.value;
+    }
+  }
 })
 
 $("#escolhefundo").change(function(){
-  if(p[1].innerHTML == "Escolha uma cor: 200 "){
-    if(saldo>=200){
+  if(p[1].innerHTML == "Escolha uma cor: 50 "){
+    if(saldo>=50){
       canvas.style.background = escolhefundo.value;
-      saldo-=200;
+      saldo-=50;
       localStorage.setItem('saldo-atual', saldo);
       caixa.innerHTML = "Saldo: " + saldo;
-      p[1].innerHTML = "Escolha uma cor: ";
-    } else if(p[1].innerHTML == "Escolha uma cor: ") canvas.style.background = escolhefundo.value;
-  } else if(p[1].innerHTML == "Escolha uma cor: ") canvas.style.background = escolhefundo.value;
+    }
+  }
 })
 //muda a cor da cobrinha
 for(let i = 0 ; i < botoesminhoca.length ; i++){
   botoesminhoca[i].addEventListener('click',function(){
     //se i>=1, a cor desejada é uma cor comprável, se i=0, é a cor padrão
     if(i>=1){
-      if(saldo >=botoesminhoca[i].value){
+      if(saldo >= botoesminhoca[i].value){
         if(botoesminhoca[i].innerHTML == botoesminhoca[i].id + ": " + botoesminhoca[i].value){
           snake.color = botoesminhoca[i].name;
           saldo-=botoesminhoca[i].value;
