@@ -72,6 +72,7 @@ button{
   padding: 3px;
   margin: 0.1em;
   cursor: pointer;
+  background-color:white;
 }
 audio{
   display: block;
