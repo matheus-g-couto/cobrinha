@@ -220,6 +220,8 @@ function Playlabel(){
     FPS = 10;
     $('#cobra').html('<p ' + 'class="mix-cores">' + 'Escolha uma cor: 25 ' + '</p>' + '<input id="escolhecobra" type="color" name="selecao">');
     $('#fundo').html('<p ' + 'class="mix-cores">' + 'Escolha uma cor: 25 ' + '</p>' + '<input id="escolhefundo" type="color" name="selecao">');
+    escolhecobra = document.getElementById("escolhecobra");
+    escolhefundo = document.getElementById("escolhefundo");
     $('#audiox').html('');
     $('h1').css('font-size','100%');
     $('h2').css('font-size','90%');
@@ -234,9 +236,9 @@ function Playlabel(){
     })
 
     $("#escolhefundo").change(function(){
-        if(saldo>=30){
+        if(saldo>=25){
           canvas.style.background = escolhefundo.value;
-          saldo-=30;
+          saldo-=25;
           localStorage.setItem('saldo-atual', saldo);
           caixa.innerHTML = "Saldo: " + saldo;
         }
