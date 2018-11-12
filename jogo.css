@@ -70,3 +70,10 @@ button{
   padding: 5px;
   margin-left: 1em;
 }
+audio{
+  display: block;
+  max-width: 200px;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+}
