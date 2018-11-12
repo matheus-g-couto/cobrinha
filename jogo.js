@@ -336,7 +336,7 @@ function Snake(){
 }
 
 $("#escolhecobra").change(function(){
-  if(p[0].innerHTML == "Escolha uma cor: 200"){
+  if(p[0].innerHTML == "Escolha uma cor: 200 "){
     if(saldo>=200){
       snake.color = escolhecobra.value;
       saldo-=200;
@@ -348,7 +348,7 @@ $("#escolhecobra").change(function(){
 })
 
 $("#escolhefundo").change(function(){
-  if(p[1].innerHTML == "Escolha uma cor: 200"){
+  if(p[1].innerHTML == "Escolha uma cor: 200 "){
     if(saldo>=200){
       canvas.style.background = escolhefundo.value;
       saldo-=200;
