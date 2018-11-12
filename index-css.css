@@ -48,21 +48,21 @@ button{
 .modal-mensagem{
   visibility: hidden;
   transition: 900ms;
-  width: 50%;
+  width: 40%;
   position: fixed;
   top:5px;
-  left: 24%;
+  left: 29%;
   z-index: 10;
 }
 
 .modal-visivel{
   position: fixed;
   top:10px;
-  left: 24%;
+  left: 29%;
   transition: 1000ms;
   visibility:visible;
   margin: auto;
-  width: 50%;
+  width: 40%;
   border: 1px solid grey;
   border-radius: 10px;
   padding: 15px;
