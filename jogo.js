@@ -216,6 +216,7 @@ function Playlabel(){
     pc:"Pressione as setas para jogar"
   };
   if(dispositivoMovel()){
+	FPS = 10;
     if(HEIGHT>WIDTH)
       this.text = this.messages["portrait"];
     else
