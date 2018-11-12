@@ -73,3 +73,10 @@ button{
   margin: 0.1em;
   cursor: pointer;
 }
+audio{
+  display: block;
+  max-width: 200px;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+}
