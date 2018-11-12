@@ -218,9 +218,11 @@ function Playlabel(){
   if(dispositivoMovel()){
     tamanhoTile = Math.max(Math.floor(WIDTH / 45),Math.floor(HEIGHT / 45))
     FPS = 12;
-    $('#cobra').html('<p' + 'class="mix-cores">' + 'Escolha uma cor: 200 ' + '</p><input id="escolhecobra" type="color" name="selecao">');
-    $('#fundo').html('<p' + 'class="mix-cores">' + 'Escolha uma cor: 200 ' + '</p><input id="escolhefundo" type="color" name="selecao">');
+    $('#cobra').html('<p ' + 'class="mix-cores">' + 'Escolha uma cor: 200 ' + '</p><input id="escolhecobra" type="color" name="selecao">');
+    $('#fundo').html('<p ' + 'class="mix-cores">' + 'Escolha uma cor: 200 ' + '</p><input id="escolhefundo" type="color" name="selecao">');
     $('#audiox').html('');
+    $('h1').css('font-size','100%');
+    $('h2').css('font-size','90%');
       this.text = this.messages["landscape"];
   }
   else{
