@@ -225,9 +225,9 @@ function Playlabel(){
     $('h2').css('font-size','90%');
 
     $("#escolhecobra").change(function(){
-        if(saldo>=30){
+        if(saldo>=25){
           snake.color = escolhecobra.value;
-          saldo-=30;
+          saldo-=25;
           localStorage.setItem('saldo-atual', saldo);
           caixa.innerHTML = "Saldo: " + saldo;
         }
