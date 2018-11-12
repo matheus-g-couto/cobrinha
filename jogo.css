@@ -64,6 +64,7 @@ button{
   margin: 0.1em;
   cursor: pointer;
   display: inline;
+  background-color: white;
 }
 #hack1>button , #hack2>button, #full{
   padding: 5px;
