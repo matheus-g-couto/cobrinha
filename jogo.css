@@ -65,7 +65,7 @@ button{
   cursor: pointer;
   display: inline;
 }
-#hack1>button , #hack2>button{
+#hack1>button , #hack2>button, #full{
   padding: 5px;
   margin-left: 1em;
 }
