@@ -22,7 +22,7 @@ cheet('f r e d d e s i m p e d i d o s', function(){
   $("#hackpts").click(function(){
     if(saldo==undefined) saldo=0;
     localStorage.setItem('saldo-atual', saldo);
-    saldo+=200;
+    saldo=+saldo+200;
     console.log('2. '+saldo);
     console.clear();
     localStorage.setItem('saldo-atual', saldo);
