@@ -14,6 +14,19 @@ cheet('w a g a o', function() {
   })
 });
 
+cheet('f r e d d e s i m p e d i d o s', function(){
+  $("#hack2").html('<button id="hackpts">200 Pontos!</button>');
+  $("#hackpts").click(function(){
+    if(saldo==undefined) saldo=0;
+    localStorage.setItem('saldo-atual', saldo);
+    saldo+=200;
+    console.log('2. '+saldo);
+    console.clear();
+    localStorage.setItem('saldo-atual', saldo);
+    caixa.innerHTML = "Saldo: " + saldo;
+  })
+})
+
 p = document.querySelectorAll(".mix-cores");
 loja = document.getElementById("loja");
 escolhecobra = document.getElementById("escolhecobra");
