@@ -63,4 +63,9 @@ button{
   padding: 3px;
   margin: 0.1em;
   cursor: pointer;
+  display: inline;
+}
+#hack1>button , #hack2>button{
+  padding: 5px;
+  margin-left: 1em;
 }
