@@ -8,7 +8,7 @@ canvas{
   right: 0;
   margin: 0;
 }
-#pontuacao{
+#pontuacao , #screen{
   position: relative;
   top: 0;
   color: white;
@@ -17,6 +17,15 @@ canvas{
   text-align: left;
   font-family: 'Ubuntu';
   font-size: 100%;
+}
+#screen{
+	margin: 0;
+	border: 1px solid white;
+	border-radius:50%;
+    background-color: black;
+    color: white;
+	float:right;
+	opacity: 0.5;
 }
 #loja{
   position: absolute;
@@ -63,17 +72,4 @@ button{
   padding: 3px;
   margin: 0.1em;
   cursor: pointer;
-  display: inline;
-  background-color: white;
-}
-#hack1>button , #hack2>button, #full{
-  padding: 5px;
-  margin-left: 1em;
-}
-audio{
-  display: block;
-  max-width: 200px;
-  margin: auto;
-  position: absolute;
-  bottom: 0;
 }
