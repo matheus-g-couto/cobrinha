@@ -176,7 +176,7 @@ function Playlabel(){
     pc:"Pressione as setas para jogar"
   };
   if(dispositivoMovel()){
-    tamanhoTile = Math.max(Math.floor(WIDTH / 30),Math.floor(HEIGHT / 30))
+    tamanhoTile = Math.max(Math.floor(WIDTH / 45),Math.floor(HEIGHT / 45))
     FPS = 12;
       this.text = this.messages["landscape"];
   }
