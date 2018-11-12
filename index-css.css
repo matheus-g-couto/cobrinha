@@ -62,7 +62,6 @@ button{
   transition: 1000ms;
   visibility:visible;
   margin: auto;
-  height: 60%;
   width: 50%;
   border: 1px solid grey;
   border-radius: 10px;
@@ -233,8 +232,10 @@ h2{
   height: 200%;
 }
 #logar-mensagem{
-  height: 47%;
+  height: 30%;
+  margin-top: 10%;
 }
 #inscrever-mensagem{
-  height: 57%;
+  height: 38%;
+  margin-top: 10%;
 }
