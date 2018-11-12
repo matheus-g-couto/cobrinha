@@ -53,9 +53,13 @@ h3{
 .hacks>button{
   margin-left: 0.3em;
 }
-button{
-  margin-top: 0.1em;
-}
 p{
   display: inline;
+}
+button{
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 3px;
+  margin: 0.1em;
+  cursor: pointer;
 }
