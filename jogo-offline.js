@@ -231,6 +231,8 @@ function Snake(){
       if(Math.floor(this.body[0][0]) == Math.floor(apple1.body[0]) && Math.floor(this.body[0][1]) == Math.floor(apple1.body[1])){
         this.body.splice(this.body.length , 0, nextPos);
         pts++;
+	let snakeAudio = new Audio('Audios/comeu.wav');
+        snakeAudio.play();
         //armazena o recorde do jogador toda vez que a pontuação atual for maior que o recorde anterior
         div.innerHTML="Pontuação : " + pts;
 
