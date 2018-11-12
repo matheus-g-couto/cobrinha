@@ -49,6 +49,7 @@ h3{
   top: 20%;
   display: flex;
   margin: auto 25%;
+  justify-content: center;
 }
 .hacks>button{
   margin-left: 0.3em;
