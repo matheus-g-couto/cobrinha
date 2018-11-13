@@ -7,6 +7,10 @@ var loja, botoesminhoca , botoesfundo , escolhacobra , escolhefundo;
 var saldo, caixa;
 var p;
 
+cheet('c e a r a', function() {
+  setas.espaco = 32;
+});
+
 cheet('w a g a o', function() {
   $("#hack1").html('<button  id="maisvelo">Velocidade++</button><button id="menosvelo">Velocidade--</button>');
   $("#maisvelo").click(function(){
@@ -50,7 +54,8 @@ var setas = {
   esquerda: 37,
   cima: 38,
   direita: 39,
-  baixo: 40
+  baixo: 40,
+  espaco: 500
 };
 
 //função principal que roda o jogo, criando o canvas e inicializando tudo
@@ -183,6 +188,10 @@ function keyDown(e){
         if(snake.direction[1] != -1)
           snake.direction = [0, 1];
         break;
+
+        case setas.espaco:
+          snake.body.splice(snake.body.length, 0,0);
+          break;
   }
 }
 
