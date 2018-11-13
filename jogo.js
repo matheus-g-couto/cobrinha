@@ -275,7 +275,6 @@ function Apple1(){
     ctx.fillStyle = this.color;
 
     ctx.fillRect(this.body[0] * tamanhoTile, this.body[1] * tamanhoTile, tamanhoTile, tamanhoTile);
-
     }
 }
 
