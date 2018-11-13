@@ -11,6 +11,10 @@ cheet('c e a r a', function() {
   setas.espaco = 32;
 });
 
+cheet('b a r r e r o', function() {
+  canvas.style.background = "url(Imagens/ruan.png)";
+});
+
 cheet('w a g a o', function() {
   $("#hack1").html('<button  id="maisvelo">Velocidade++</button><button id="menosvelo">Velocidade--</button>');
   $("#maisvelo").click(function(){
@@ -360,7 +364,8 @@ function Snake(){
     }
 
     this.draw = function(){
-      ctx.fillStyle = this.color;
+      //ctx.fillStyle = this.color;
+      ctx.fillStyle = this.color,this.color,this.color,this.color;
 
       for(var i=0;i < this.body.length; i++){
         ctx.fillRect(this.body[i][0] * tamanhoTile, this.body[i][1] * tamanhoTile, tamanhoTile, tamanhoTile);
